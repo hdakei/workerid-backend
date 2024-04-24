@@ -1,8 +1,10 @@
 import random
 import string
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 def generate_worker_id():
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
